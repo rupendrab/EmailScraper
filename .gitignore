@@ -1,0 +1,42 @@
+# Ignore target directory except for JAR files
+/target/*
+!/target/*.jar
+
+# Ignore Maven wrapper files
+.mvn/
+mvnw
+mvnw.cmd
+
+# Eclipse specific files
+.project
+.classpath
+.settings/
+
+# Ignore IDE specific directories
+.idea/
+.vscode/
+
+# Ignore log files
+*.log
+
+# Ignore compiled class files
+*.class
+
+# Ignore temporary files
+*.tmp
+*.bak
+*.swp
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore test reports and coverage results
+/test-output/
+.surefire-reports/
+.coverage/
+
+# Ignore dependency resolution directory
+dependency-reduced-pom.xml
+
+test.bat
