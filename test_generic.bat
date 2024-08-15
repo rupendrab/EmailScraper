@@ -7,6 +7,7 @@ set client_secret=%2%
 set tenant_id=%3%
 set email=%4%
 set login=%5%
+set folder=INBOX/ABI
 
 :: Save the current directory
 set "original_dir=%cd%"
@@ -17,34 +18,47 @@ cd /d "%~dp0"
 echo -----  Test 1 -----
 echo.
 java -cp target\email-scraper-1.0-SNAPSHOT.jar com.example.CheckMailConnection ^
+  -u %email% ^
+  -cli %client_id% ^
+  -cls %client_secret% ^
+  -ti %tenant_id% ^
+  -f %folder%
+
+echo -----  Test 2 -----
+echo.
+java -cp target\email-scraper-1.0-SNAPSHOT.jar com.example.CheckMailConnection ^
   -u %login% ^
   -cli %client_id% ^
   -cls %client_secret% ^
-  -ti %tenant_id% 
+  -ti %tenant_id% ^
+  -f %folder%
 
-echo -----  Test 2 -----
+echo -----  Test 3 -----
 echo.
 java -cp target\email-scraper-1.0-SNAPSHOT.jar com.example.CheckMailConnection ^
   -u %login%/%email% ^
   -cli %client_id% ^
   -cls %client_secret% ^
-  -ti %tenant_id% 
+  -ti %tenant_id% ^
+  -f %folder%
 
-echo -----  Test 3 -----
+echo -----  Test 4 -----
 echo.
 java -cp target\email-scraper-1.0-SNAPSHOT.jar com.example.CheckMailConnection ^
   -u %login%\%email% ^
   -cli %client_id% ^
   -cls %client_secret% ^
-  -ti %tenant_id% 
+  -ti %tenant_id% ^
+  -f %folder%
 
-echo -----  Test 4 -----
+echo -----  Test 5 -----
 echo.
 java -cp target\email-scraper-1.0-SNAPSHOT.jar com.example.CheckMailConnection ^
   -u %login%\\%email% ^
   -cli %client_id% ^
   -cls %client_secret% ^
-  -ti %tenant_id% 
+  -ti %tenant_id% ^
+  -f %folder%
 
 :: Change back to the original directory
 cd /d "%original_dir%"
