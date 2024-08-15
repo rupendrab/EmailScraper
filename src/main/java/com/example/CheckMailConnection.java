@@ -127,7 +127,7 @@ public class CheckMailConnection
         System.err.println("Usage: java " + CheckMailConnection.class.getName() + " \n" +
                 "    -H (show help) \n" +
                 "    -h <Mail Host> default is outlook.office365.com \n" +
-                "    -u <Login ID> default is KAMResearch2@kochind.onmicrosoft.com \n" +
+                "    -u <Login ID> \n" +
                 "    -cli <Client Id> \n" +
                 "    -cls <Client Secret> \n" +
                 "    -ti <Tenant Id> \n " +
@@ -145,7 +145,8 @@ public class CheckMailConnection
         String loginId = argParse.get("u");
         if (loginId == null || loginId.isEmpty())
         {
-            loginId = "KAMResearch2@kochind.onmicrosoft.com";
+            System.err.println("Login ID Id is not provided");
+            printHelp();
         }
         String clientId = argParse.get("cli");
         String clientSecret = argParse.get("cls");

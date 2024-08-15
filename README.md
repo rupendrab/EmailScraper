@@ -4,8 +4,7 @@ The following need to be set up for the app based access:
 1. Client ID
 2. Client Secret
 3. Tenant ID
-4. Email-ID
-5. Login ID (If different from the e-mail ID)
+5. Login ID (Could be same as the e-mail ID in question, or could be different)
 
 The jar files created should work for Java 1.8+ versions.  
   
@@ -20,7 +19,7 @@ Shows the output:
 Usage: java com.example.CheckMailConnection
     -H (show help)
     -h <Mail Host> default is outlook.office365.com
-    -u <Login ID> default is KAMResearch2@kochind.onmicrosoft.com
+    -u <Login ID>
     -cli <Client Id>
     -cls <Client Secret>
     -ti <Tenant Id>
